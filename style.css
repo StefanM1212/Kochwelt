@@ -25,6 +25,9 @@ body {
   color: var(--text);
   background: var(--white);
   min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -101,6 +104,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 footer .logo img {
@@ -432,12 +436,13 @@ footer .logo-text {
 }
 
 .portionen-input {
-  width: 50px;
-  padding: 6px 10px;
+  width: 70px;
+  padding: 8px 10px;
   border: 1px solid #cccccc;
   border-radius: 4px;
   font-family: 'Raleway', sans-serif;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-align: center;
   outline: none;
 }
@@ -446,7 +451,6 @@ footer .logo-text {
   list-style: none;
   margin-bottom: 48px;
   border-radius: 4px;
-  overflow: hidden;
 }
 
 .zutaten-list li {
