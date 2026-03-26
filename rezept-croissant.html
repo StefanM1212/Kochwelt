@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kochwelt – Französische Croissants</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Kochwelt Logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.closest('header').querySelector('nav').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="rezept-des-tages.html" class="active">Rezept des Tages</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </header>
+
+  <!-- REZEPT DETAIL -->
+  <main class="rezept-detail">
+
+    <h1>Französische Croissants</h1>
+
+    <img class="rezept-hero-img" src="img/croissant.jpg" alt="Französische Croissants" />
+
+    <!-- Meta-Chips -->
+    <div class="rezept-meta">
+      <span class="meta-chip">
+        <i class="fa-regular fa-clock"></i>
+        30 Min.
+      </span>
+      <span class="meta-chip">
+        <i class="fa-solid fa-utensils"></i>
+        mittel
+      </span>
+      <span class="meta-chip">
+        <i class="fa-regular fa-calendar"></i>
+        12.03.2024
+      </span>
+    </div>
+
+    <!-- ZUTATEN -->
+    <div class="zutaten-header">
+      <label for="portionen">Zutaten für</label>
+      <input type="number" id="portionen" class="portionen-input" value="8" min="1" />
+      <button class="btn-green" onclick="berechneMengen()">Portionen</button>
+    </div>
+
+    <ul class="zutaten-list" id="zutaten">
+      <li><span class="menge" data-base="500">500</span> g Mehl (Type 550)</li>
+      <li><span class="menge" data-base="1">1</span> Päckchen Trockenhefe (7 g)</li>
+      <li><span class="menge" data-base="60">60</span> g Zucker</li>
+      <li><span class="menge" data-base="1">1</span> TL Salz</li>
+      <li><span class="menge" data-base="300">300</span> ml lauwarme Milch</li>
+      <li><span class="menge" data-base="250">250</span> g kalte Butter (für das Tourieren)</li>
+      <li><span class="menge" data-base="1">1</span> Ei (zum Bestreichen)</li>
+      <li><span class="menge" data-base="1">1</span> EL Milch (zum Bestreichen)</li>
+    </ul>
+
+    <!-- ZUBEREITUNG -->
+    <div class="zubereitung">
+      <h2>Zubereitung</h2>
+      <div class="zubereitung-meta">
+        <span class="meta-chip">
+          <i class="fa-regular fa-clock"></i>
+          ca. 30 Minuten aktiv
+        </span>
+        <span class="meta-chip">
+          <i class="fa-regular fa-clock"></i>
+          Gesamtzeit ca. 3 Stunden
+        </span>
+      </div>
+      <p>
+        Mehl, Hefe, Zucker und Salz in einer Schüssel vermengen. Die lauwarme Milch hinzugeben
+        und alles zu einem glatten Teig verkneten. Den Teig zu einer Kugel formen, abdecken und
+        1 Stunde bei Raumtemperatur gehen lassen, bis er sich verdoppelt hat.<br /><br />
+        Die kalte Butter zwischen zwei Lagen Frischhaltefolie auf ca. 20×20 cm flach klopfen.
+        Den Teig auf einer bemehlten Fläche rechteckig ausrollen (ca. 40×20 cm). Die Butterplatte
+        in die Mitte legen und die Teigränder darüberfalten. Mehrfach ausrollen und falten
+        (tourieren) – insgesamt 3 Mal, dazwischen jeweils 30 Minuten kühlen.<br /><br />
+        Den fertigen Teig ca. 4 mm dünn ausrollen und in Dreiecke schneiden. Jedes Dreieck von
+        der breiten Seite her aufrollen und zu einer Hörnchen-Form biegen. Auf ein Backblech mit
+        Backpapier legen und nochmals 30 Minuten ruhen lassen.<br /><br />
+        Ei mit Milch verquirlen und die Croissants damit bestreichen. Im vorgeheizten Ofen bei
+        200 °C (Ober-/Unterhitze) ca. 18–20 Minuten goldbraun backen. Abkühlen lassen und genießen.
+      </p>
+    </div>
+
+    <!-- AUTOR -->
+    <div class="rezept-autor">
+      <h3>Rezept erstellt von</h3>
+      <div class="autor-info">
+        <img src="img/profile.png" alt="Autor Avatar" />
+        <span>Junus</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Kochwelt Logo" />
+      </a>
+      <a href="impressum.html" class="footer-impressum">Impressum</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/?locale=de_DE" target="_blank" class="social-btn facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+        <div><span class="find-text">Find us on</span>Facebook</div>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+        <i class="fa-brands fa-instagram"></i>
+        <div><span class="find-text">Follow us on</span>Instagram</div>
+      </a>
+      <a href="https://x.com/?lang=de" target="_blank" class="social-btn twitter">
+        <i class="fa-brands fa-twitter"></i>
+        <div><span class="find-text">Follow us on</span>Twitter</div>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const BASIS_PORTIONEN = 8;
+    const input = document.getElementById('portionen');
+
+    // Nur Zahlen erlauben, kein Minus, kein Komma
+    input.addEventListener('keydown', function(e) {
+      const erlaubt = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+      if (erlaubt.includes(e.key)) return;
+      if (!/^\d$/.test(e.key)) e.preventDefault();
+    });
+
+    // Beim Einfügen (Paste) alles außer Zahlen entfernen
+    input.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+      if (this.value !== '') berechneMengen();
+    });
+
+    // Erst beim Verlassen: leeres Feld oder 0 auf 1 setzen
+    input.addEventListener('blur', function() {
+      if (this.value === '' || parseInt(this.value) < 1) {
+        this.value = 1;
+        berechneMengen();
+      }
+    });
+
+    function berechneMengen() {
+      const portionen = Math.max(1, parseInt(input.value) || 1);
+      input.value = portionen;
+      const faktor = portionen / BASIS_PORTIONEN;
+
+      document.querySelectorAll('.menge').forEach(span => {
+        const basis = parseFloat(span.dataset.base);
+        const neu = basis * faktor;
+        // Ganzzahl wenn möglich, sonst 1 Nachkommastelle
+        span.textContent = Number.isInteger(neu) ? neu : parseFloat(neu.toFixed(1));
+      });
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kochwelt – Buntes Wok-Gemüse</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Kochwelt Logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.closest('header').querySelector('nav').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="rezept-des-tages.html" class="active">Rezept des Tages</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </header>
+
+  <!-- REZEPT DETAIL -->
+  <main class="rezept-detail">
+
+    <h1>Buntes Wok-Gemüse</h1>
+
+    <img class="rezept-hero-img" src="img/wok.jpg" alt="Buntes Wok-Gemüse" />
+
+    <!-- Meta-Chips -->
+    <div class="rezept-meta">
+      <span class="meta-chip">
+        <i class="fa-regular fa-clock"></i>
+        20 Min.
+      </span>
+      <span class="meta-chip">
+        <i class="fa-solid fa-utensils"></i>
+        simpel
+      </span>
+      <span class="meta-chip">
+        <i class="fa-regular fa-calendar"></i>
+        05.01.2024
+      </span>
+    </div>
+
+    <!-- ZUTATEN -->
+    <div class="zutaten-header">
+      <label for="portionen">Zutaten für</label>
+      <input type="number" id="portionen" class="portionen-input" value="2" min="1" />
+      <button class="btn-green" onclick="berechneMengen()">Portionen</button>
+    </div>
+
+    <ul class="zutaten-list" id="zutaten">
+      <li><span class="menge" data-base="1">1</span> Brokkoli (in Röschen)</li>
+      <li><span class="menge" data-base="2">2</span> Karotten (in Scheiben)</li>
+      <li><span class="menge" data-base="1">1</span> rote Paprika (in Streifen)</li>
+      <li><span class="menge" data-base="1">1</span> gelbe Paprika (in Streifen)</li>
+      <li><span class="menge" data-base="150">150</span> g Zuckerschoten</li>
+      <li><span class="menge" data-base="2">2</span> Frühlingszwiebeln</li>
+      <li><span class="menge" data-base="3">3</span> Knoblauchzehen</li>
+      <li><span class="menge" data-base="1">1</span> Stück Ingwer (ca. 2 cm)</li>
+      <li><span class="menge" data-base="3">3</span> EL Sojasoße</li>
+      <li><span class="menge" data-base="2">2</span> EL Sesamöl</li>
+      <li><span class="menge" data-base="1">1</span> EL Speisestärke</li>
+      <li>Sesam zum Bestreuen</li>
+    </ul>
+
+    <!-- ZUBEREITUNG -->
+    <div class="zubereitung">
+      <h2>Zubereitung</h2>
+      <div class="zubereitung-meta">
+        <span class="meta-chip">
+          <i class="fa-regular fa-clock"></i>
+          ca. 10 Minuten aktiv
+        </span>
+        <span class="meta-chip">
+          <i class="fa-regular fa-clock"></i>
+          Gesamtzeit ca. 20 Minuten
+        </span>
+      </div>
+      <p>
+        Alle Gemüsesorten waschen und in mundgerechte Stücke schneiden. Knoblauch und Ingwer
+        fein hacken. Sojasoße und Speisestärke in einer kleinen Schüssel verrühren und beiseite
+        stellen.<br /><br />
+        Den Wok (oder eine große Pfanne) bei hoher Hitze erhitzen und das Sesamöl hineingeben.
+        Zuerst Knoblauch und Ingwer kurz anbraten (ca. 30 Sekunden), bis sie duften.
+        Anschließend das härtere Gemüse – Karotten und Brokkoli – zufügen und 3–4 Minuten
+        unter ständigem Rühren scharf anbraten.<br /><br />
+        Paprika, Zuckerschoten und Frühlingszwiebeln dazugeben und weitere 2–3 Minuten mitbraten.
+        Die Sojasoße-Stärke-Mischung über das Gemüse gießen und alles schnell verrühren, bis
+        die Sauce eindickt und das Gemüse gleichmäßig glasiert ist.<br /><br />
+        Mit Sesam bestreuen und sofort mit Reis oder Nudeln servieren.
+      </p>
+    </div>
+
+    <!-- AUTOR -->
+    <div class="rezept-autor">
+      <h3>Rezept erstellt von</h3>
+      <div class="autor-info">
+        <img src="img/profile.png" alt="Autor Avatar" />
+        <span>Junus</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Kochwelt Logo" />
+      </a>
+      <a href="impressum.html" class="footer-impressum">Impressum</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/?locale=de_DE" target="_blank" class="social-btn facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+        <div><span class="find-text">Find us on</span>Facebook</div>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+        <i class="fa-brands fa-instagram"></i>
+        <div><span class="find-text">Follow us on</span>Instagram</div>
+      </a>
+      <a href="https://x.com/?lang=de" target="_blank" class="social-btn twitter">
+        <i class="fa-brands fa-twitter"></i>
+        <div><span class="find-text">Follow us on</span>Twitter</div>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const BASIS_PORTIONEN = 2;
+    const input = document.getElementById('portionen');
+
+    input.addEventListener('keydown', function(e) {
+      const erlaubt = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+      if (erlaubt.includes(e.key)) return;
+      if (!/^\d$/.test(e.key)) e.preventDefault();
+    });
+
+    input.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+      if (this.value !== '') berechneMengen();
+    });
+
+    // Erst beim Verlassen: leeres Feld oder 0 auf 1 setzen
+    input.addEventListener('blur', function() {
+      if (this.value === '' || parseInt(this.value) < 1) {
+        this.value = 1;
+        berechneMengen();
+      }
+    });
+
+    function berechneMengen() {
+      const portionen = Math.max(1, parseInt(input.value) || 1);
+      input.value = portionen;
+      const faktor = portionen / BASIS_PORTIONEN;
+
+      document.querySelectorAll('.menge').forEach(span => {
+        const basis = parseFloat(span.dataset.base);
+        const neu = basis * faktor;
+        span.textContent = Number.isInteger(neu) ? neu : parseFloat(neu.toFixed(1));
+      });
+    }
+  </script>
+
+</body>
+</html>

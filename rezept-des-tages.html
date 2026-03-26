@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kochwelt – Rezept des Tages</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Kochwelt Logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.closest('header').querySelector('nav').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="rezept-des-tages.html" class="active">Rezept des Tages</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </header>
+
+  <!-- FEATURED RECIPE -->
+  <section style="background: var(--white); padding: 60px 0;">
+    <div class="featured-recipe">
+      <img class="recipe-img" src="img/croissant.jpg" alt="Französische Croissants" />
+      <div class="recipe-info">
+        <h1>Französische Croissants</h1>
+        <p>
+          Schmackhafte Croissants können auch zu Hause sehr einfach gebacken
+          werden. Mit ca. 30 Minuten Aufwand kannst du ein wundervolles
+          Frühstück zaubern.
+        </p>
+        <a href="rezept-croissant.html" class="btn-green">Rezept öffnen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEUE REZEPTE -->
+  <section class="new-recipes">
+    <h2>Lust auf was Neues?</h2>
+    <div class="recipe-cards">
+      <a href="rezept-croissant.html" class="recipe-card">
+        <img src="img/croissant.jpg" alt="Französische Croissants" />
+        <span>Französische Croissants</span>
+      </a>
+      <a href="rezept-wok.html" class="recipe-card">
+        <img src="img/wok.jpg" alt="Buntes Wok-Gemüse" />
+        <span>Buntes Wok-Gemüse</span>
+      </a>
+      <a href="rezept-bauernsalat.html" class="recipe-card">
+        <img src="img/salad.jpg" alt="Griechischer Bauernsalat" />
+        <span>Griechischer Bauernsalat</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ARTIKEL SECTION -->
+  <section style="background: var(--white);">
+    <div class="article-section">
+      <h2>Pfanne vs. Wok – Was ist besser?</h2>
+      <div class="article-content">
+        <p>
+          Pfanne und Wok sehen sich ähnlich – doch in der Küche spielen sie ganz unterschiedliche
+          Rollen. Der Wok stammt aus der asiatischen Küche und überzeugt durch seine steilen Wände
+          und den kleinen, heißen Boden. Das Ergebnis: extrem hohe Hitze auf kleiner Fläche, die
+          Gemüse und Fleisch blitzschnell anbrät, ohne es zu garen. So bleiben Vitamine erhalten
+          und das Essen bleibt schön knackig.<br /><br />
+          Die klassische Pfanne dagegen verteilt die Hitze gleichmäßiger über den gesamten Boden –
+          ideal für Schmorgerichte, Saucen, Bratkartoffeln oder ein perfektes Spiegelei. Für
+          cremige Risottos oder langsam gegarte Fleischstücke kommt kein Wok an sie heran.<br /><br />
+          Fazit: Wer schnell und heiß kochen will – asiatische Gerichte, Pfannengemüse, gebratene
+          Nudeln – greift zum Wok. Für den Küchenalltag mit Vielfalt ist die Pfanne die bessere Wahl.
+          Am besten: beides!
+        </p>
+        <img src="img/wok.jpg" alt="Pfanne vs. Wok" />
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Kochwelt Logo" />
+      </a>
+      <a href="impressum.html" class="footer-impressum">Impressum</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/?locale=de_DE" target="_blank" class="social-btn facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+        <div><span class="find-text">Find us on</span>Facebook</div>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+        <i class="fa-brands fa-instagram"></i>
+        <div><span class="find-text">Follow us on</span>Instagram</div>
+      </a>
+      <a href="https://x.com/?lang=de" target="_blank" class="social-btn twitter">
+        <i class="fa-brands fa-twitter"></i>
+        <div><span class="find-text">Follow us on</span>Twitter</div>
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>

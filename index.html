@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kochwelt – Startseite</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Kochwelt Logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.closest('header').querySelector('nav').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <a href="index.html" class="active">Start</a>
+      <a href="rezept-des-tages.html">Rezept des Tages</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content fly-up">
+      <h1>Willkommen bei Kochwelt</h1>
+      <p>Entdecke einfache und leckere Rezepte für jeden Tag – von Frühstück bis Abendessen.</p>
+      <a href="rezept-des-tages.html" class="btn-green">Rezept des Tages</a>
+    </div>
+  </section>
+
+  <!-- REZEPT 1 — Bild links, Text rechts -->
+  <section class="showcase-section bg-white">
+    <div class="showcase fly-left">
+      <img src="img/croissant.jpg" alt="Französische Croissants" />
+      <div class="showcase-text">
+        <span class="showcase-tag">Frühstück</span>
+        <h2>Französische Croissants</h2>
+        <p>Goldbraun, buttrig und unwiderstehlich. Diese Croissants gelingen auch zu Hause – mit etwas Geduld und dem richtigen Teig.</p>
+        <a href="rezept-croissant.html" class="btn-green">Zum Rezept</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REZEPT 2 — Text links, Bild rechts -->
+  <section class="showcase-section bg-gray">
+    <div class="showcase showcase-reverse fly-right">
+      <img src="img/wok.jpg" alt="Buntes Wok-Gemüse" />
+      <div class="showcase-text">
+        <span class="showcase-tag">Hauptgericht</span>
+        <h2>Buntes Wok-Gemüse</h2>
+        <p>Knackiges Gemüse, Sojasoße und frischer Ingwer – in nur 20 Minuten auf dem Tisch. Schnell, gesund und voller Geschmack.</p>
+        <a href="rezept-wok.html" class="btn-green">Zum Rezept</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REZEPT 3 — Bild links, Text rechts -->
+  <section class="showcase-section bg-white">
+    <div class="showcase fly-left">
+      <img src="img/salad.jpg" alt="Griechischer Bauernsalat" />
+      <div class="showcase-text">
+        <span class="showcase-tag">Salat</span>
+        <h2>Griechischer Bauernsalat</h2>
+        <p>Frische Tomaten, Feta, Oliven und ein gutes Olivenöl – dieses Klassikerrezept ist in 15 Minuten fertig und immer ein Genuss.</p>
+        <a href="rezept-bauernsalat.html" class="btn-green">Zum Rezept</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Kochwelt Logo" />
+      </a>
+      <a href="impressum.html" class="footer-impressum">Impressum</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/?locale=de_DE" target="_blank" class="social-btn facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+        <div><span class="find-text">Find us on</span>Facebook</div>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+        <i class="fa-brands fa-instagram"></i>
+        <div><span class="find-text">Follow us on</span>Instagram</div>
+      </a>
+      <a href="https://x.com/?lang=de" target="_blank" class="social-btn twitter">
+        <i class="fa-brands fa-twitter"></i>
+        <div><span class="find-text">Follow us on</span>Twitter</div>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.fly-left, .fly-right, .fly-up').forEach(el => {
+      observer.observe(el);
+    });
+  </script>
+
+</body>
+</html>

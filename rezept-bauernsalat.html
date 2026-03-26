@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kochwelt – Griechischer Bauernsalat</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Kochwelt Logo" />
+    </a>
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="this.closest('header').querySelector('nav').classList.toggle('open')">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav>
+      <a href="index.html">Start</a>
+      <a href="rezept-des-tages.html" class="active">Rezept des Tages</a>
+      <a href="kontakt.html">Kontakt</a>
+      <a href="impressum.html">Impressum</a>
+    </nav>
+  </header>
+
+  <!-- REZEPT DETAIL -->
+  <main class="rezept-detail">
+
+    <h1>Griechischer Bauernsalat</h1>
+
+    <img class="rezept-hero-img" src="img/salad.jpg" alt="Griechischer Bauernsalat" />
+
+    <!-- Meta-Chips -->
+    <div class="rezept-meta">
+      <span class="meta-chip">
+        <i class="fa-regular fa-clock"></i>
+        15 Min.
+      </span>
+      <span class="meta-chip">
+        <i class="fa-solid fa-utensils"></i>
+        simpel
+      </span>
+      <span class="meta-chip">
+        <i class="fa-regular fa-calendar"></i>
+        28.09.2020
+      </span>
+    </div>
+
+    <!-- ZUTATEN -->
+    <div class="zutaten-header">
+      <label for="portionen">Zutaten für</label>
+      <input type="number" id="portionen" class="portionen-input" value="4" min="1" />
+      <button class="btn-green" onclick="berechneMengen()">Portionen</button>
+    </div>
+
+    <ul class="zutaten-list" id="zutaten">
+      <li><span class="menge" data-base="1">1</span> Salatgurke</li>
+      <li><span class="menge" data-base="2">2</span> Paprikaschoten (rot und grün)</li>
+      <li><span class="menge" data-base="500">500</span> g Tomaten</li>
+      <li><span class="menge" data-base="2">2</span> Zwiebeln</li>
+      <li><span class="menge" data-base="200">200</span> g Schafskäse (Feta)</li>
+      <li><span class="menge" data-base="1">1</span> Glas schwarze Oliven (ca. 100 g)</li>
+      <li>Salz und Pfeffer</li>
+      <li><span class="menge" data-base="1">1</span> Zitrone</li>
+      <li><span class="menge" data-base="125">125</span> ml Olivenöl</li>
+      <li>Oregano</li>
+    </ul>
+
+    <!-- ZUBEREITUNG -->
+    <div class="zubereitung">
+      <h2>Zubereitung</h2>
+      <div class="zubereitung-meta">
+        <span class="meta-chip">
+          <i class="fa-regular fa-clock"></i>
+          ca. 15 Minuten aktiv
+        </span>
+        <span class="meta-chip">
+          <i class="fa-regular fa-clock"></i>
+          Gesamtzeit ca. 15 Minuten
+        </span>
+      </div>
+      <p>
+        Gurke waschen und ungeschält in dünne Scheiben oder mundgerechte Stücke schneiden.
+        Paprika waschen, entkernen und in dünne Streifen oder Würfel schneiden. Tomaten waschen
+        und in Achtel schneiden. Zwiebeln schälen und in feine Ringe schneiden.<br /><br />
+        Schafskäse in grobe Würfel schneiden und mit Oregano bestreuen. Oliven abgießen.
+        Gurke, Paprika, Tomaten, Zwiebeln, Schafskäse und Oliven in eine große Schüssel geben.<br /><br />
+        Olivenöl, Zitronensaft, Salz und Pfeffer zu einer Vinaigrette verrühren und über den
+        Salat gießen. Alles vorsichtig vermengen. Sofort servieren oder kurz ziehen lassen.
+      </p>
+    </div>
+
+    <!-- AUTOR -->
+    <div class="rezept-autor">
+      <h3>Rezept erstellt von</h3>
+      <div class="autor-info">
+        <img src="img/profile.png" alt="Autor Avatar" />
+        <span>Junus</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Kochwelt Logo" />
+      </a>
+      <a href="impressum.html" class="footer-impressum">Impressum</a>
+    </div>
+    <div class="social-links">
+      <a href="https://www.facebook.com/?locale=de_DE" target="_blank" class="social-btn facebook">
+        <i class="fa-brands fa-facebook-f"></i>
+        <div><span class="find-text">Find us on</span>Facebook</div>
+      </a>
+      <a href="https://www.instagram.com/" target="_blank" class="social-btn instagram">
+        <i class="fa-brands fa-instagram"></i>
+        <div><span class="find-text">Follow us on</span>Instagram</div>
+      </a>
+      <a href="https://x.com/?lang=de" target="_blank" class="social-btn twitter">
+        <i class="fa-brands fa-twitter"></i>
+        <div><span class="find-text">Follow us on</span>Twitter</div>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const BASIS_PORTIONEN = 4;
+    const input = document.getElementById('portionen');
+
+    input.addEventListener('keydown', function(e) {
+      const erlaubt = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
+      if (erlaubt.includes(e.key)) return;
+      if (!/^\d$/.test(e.key)) e.preventDefault();
+    });
+
+    input.addEventListener('input', function() {
+      this.value = this.value.replace(/[^0-9]/g, '');
+      if (this.value !== '') berechneMengen();
+    });
+
+    // Erst beim Verlassen: leeres Feld oder 0 auf 1 setzen
+    input.addEventListener('blur', function() {
+      if (this.value === '' || parseInt(this.value) < 1) {
+        this.value = 1;
+        berechneMengen();
+      }
+    });
+
+    function berechneMengen() {
+      const portionen = Math.max(1, parseInt(input.value) || 1);
+      input.value = portionen;
+      const faktor = portionen / BASIS_PORTIONEN;
+
+      document.querySelectorAll('.menge').forEach(span => {
+        const basis = parseFloat(span.dataset.base);
+        const neu = basis * faktor;
+        span.textContent = Number.isInteger(neu) ? neu : parseFloat(neu.toFixed(1));
+      });
+    }
+  </script>
+
+</body>
+</html>
